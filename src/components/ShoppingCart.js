@@ -17,6 +17,8 @@ const ShoppingCart = props => {
 		}, 0).toFixed(2);
 	};
 
+	
+
 	return (
 		<div className="shopping-cart">
 			{cart.map(item => (

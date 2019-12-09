@@ -5,10 +5,12 @@ import {useContext} from 'react'
 import Product from './Product';
 
 import {ProductContext} from './../contexts/ProductContext'
+import {CartContext} from './../contexts/CartContext'
 
 const Products = ()=> {
 
 	const {products, addItem} = useContext(ProductContext)
+	const {removeItem} = useContext(CartContext)
 
 	return (
 		<div className="products-container">
@@ -17,6 +19,7 @@ const Products = ()=> {
 					key={product.id}
 					product={product}
 					addItem={addItem}
+					removeItem={removeItem}
 				/>
 			))}
 		</div>
