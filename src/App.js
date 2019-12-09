@@ -16,7 +16,6 @@ function App() {
 	const [products] = useState(data);
 	const [cart, setCart] = useState([]);
 
-	const {products, addItem} = useContext(ProductContext)
 
 	const addItem = item => {
 		setCart([...cart, item])
