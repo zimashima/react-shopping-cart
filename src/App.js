@@ -8,8 +8,9 @@ import Products from './components/Products';
 import ShoppingCart from './components/ShoppingCart';
 
 //Contexts
-
+import {CartContext} from './contexts/CartContext'
 import {ProductContext} from './contexts/ProductContext'
+
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
 
 	return (
 		<div className="App">
+			<CartContext.Provider value={{cart}}>
 			<Navigation cart={cart} />
 
 			{/* Routes */}
@@ -35,8 +37,10 @@ function App() {
 
 			<Route
 				path="/cart"
-				render={() => <ShoppingCart cart={cart} />}
+				component={ShoppingCart} />}
 			/>
+
+			</CartContext.Provider>
 		</div>
 	);
 }
